@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR Lookup Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>HR Lookup Form</h1>
+    <form method="POST" action="/lookup">
+        <!-- Include your filtering fields here -->
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+            <th>Employment Status</th>
+            <th>Email</th>
+            <th>Accommodation Requests</th>
+            <th>File</th>
+        </tr>
+        {% for submission in submissions %}
+        <tr>
+            <td>{{ submission['name'] }}</td>
+            <td>{{ submission['employee_id'] }}</td>
+            <td>{{ submission['department'] }}</td>
+            <td>{{ submission['employment_status'] }}</td>
+            <td>{{ submission['email'] }}</td>
+            <td>{{ submission['accommodation_requests'] }}</td>
+            <td><a href="{{ submission['file_path'] }}" target="_blank">View File</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

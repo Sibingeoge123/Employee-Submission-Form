@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+            color: #333;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            border: none;
+            padding: 0;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Submission Form</h1>
+    <form method="POST" action="/submit" enctype="multipart/form-data">
+        <div>
+            <label for="name">Employee Name</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div>
+            <label for="employee_id">Employee ID</label>
+            <input type="text" name="employee_id" id="employee_id" required>
+        </div>
+
+        <div>
+            <label for="department">Department</label>
+            <input type="text" name="department" id="department" required>
+        </div>
+
+        <div>
+            <label for="employment_status">Employment Status</label>
+            <input type="text" name="employment_status" id="employment_status" required>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="accommodation_requests">Accommodation Requests</label>
+            <input type="text" name="accommodation_requests" id="accommodation_requests">
+        </div>
+
+        <div>
+            <label for="file">File</label>
+            <input type="file" name="file" id="file" accept=".pdf, .doc, .docx">
+        </div>
+
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
